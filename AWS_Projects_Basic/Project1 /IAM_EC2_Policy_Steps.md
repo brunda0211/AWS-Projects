@@ -153,7 +153,7 @@ You should now see **two EC2 instances**, one for production and one for develop
 6. Click **Next**  
 7. Fill in the policy details:  
    - **Name**: `XYZDevEnvironmentPolicy`  
-   - **Description**: IAM Policy for NextWorks development environment  
+   - **Description**: IAM Policy for XYZ development environment  
 8. Click **Create policy**
 
 ✅ Awesome, the permission policy is all set up!  
@@ -246,7 +246,7 @@ Once done, clean up everything:
 6. Click **Next**
 7. Fill in the policy details:
    - **Name**: `XYZDevEnvironmentPolicy`
-   - **Description**: IAM Policy for NextWorks development environment
+   - **Description**: IAM Policy for XYZ development environment
 8. Click **Create policy**
 
 ✅ Awesome, the permission policy is all set up!  
