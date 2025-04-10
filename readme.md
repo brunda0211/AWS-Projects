@@ -11,3 +11,12 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
   - **Description**: In this project, we’ll launch an EC2 instance, and then use IAM policies, user groups, and an AWS Account Alias to control access. The policy we create will grant full access only to EC2 instances tagged with ENV: development
   - **Service Used**: AWS IAM, EC2
   - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project1%20/IAM_EC2_Policy_Steps.md)
+
+  ### **Project 2: Netflix Data Visualization with Amazon QuickSight + S3**
+
+- **Description:** In this project, we’ll analyze Netflix’s global catalogue using AWS. You’ll upload a dataset to Amazon S3, connect it to Amazon QuickSight via a manifest file, and build an interactive dashboard to visualize trends across years, genres, and content types.
+
+- **Service Used:** Amazon S3, Amazon QuickSight
+
+- **Link:** [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project2/Netflix_data_visualization.md) 
+
