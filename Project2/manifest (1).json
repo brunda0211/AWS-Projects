@@ -1,0 +1,15 @@
+{
+   "fileLocations": [
+       {
+           "URIs": [
+               "s3://nextwork-quicksight-project-name/netflix_titles.csv"
+           ]
+       }
+   ],
+   "globalUploadSettings": {
+       "format": "CSV",
+       "delimiter": ",",
+       "textqualifier": "\"",
+       "containsHeader": "true"
+   }
+}
