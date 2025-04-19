@@ -33,6 +33,6 @@ This section features projects that involve combining multiple AWS services, han
 
   - **Description**: This project walks through building a fully functional banking chatbot using Amazon Lex and Lambda. The bot handles greetings, balance checks, context-based follow-ups, and fund transfers using custom slots and confirmation prompts. You’ll also automate deployment using AWS CloudFormation and explore Lex’s visual tools.
 
-  - **Service Used**: Amazon Lex, AWS Lambda, CloudFormation
+  - **Service Used**: Amazon Lex, AWS Lambda, CloudFormation. 
 
   - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Project%201/Chatbot_using_lex.md)
