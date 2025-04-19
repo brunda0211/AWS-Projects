@@ -36,3 +36,12 @@ This section features projects that involve combining multiple AWS services, han
   - **Service Used**: Amazon Lex, AWS Lambda, CloudFormation. 
 
   - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Project%201/Chatbot_using_lex.md)
+
+
+### Project 2 : Multi-Cloud Data Transfer with AWS and GCP
+
+- **Description**: This project demonstrates how to transfer data securely between AWS S3 and Google Cloud Storage using GCP’s Storage Transfer Service. You'll configure identity federation via IAM roles, set up cloud storage buckets on both platforms, and execute a batch transfer job. Optionally, you can filter transfers using a manifest file. This project is ideal for practicing cross-cloud architecture and automation skills.
+
+- **Service Used**: AWS S3, AWS IAM, Google Cloud Storage, GCP Storage Transfer Service 
+
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/GCP%20and%20AWS%20Multi-Cloud%20Data%20Transfer/Multi-Cloud-Data-Transfer-Project.md)
