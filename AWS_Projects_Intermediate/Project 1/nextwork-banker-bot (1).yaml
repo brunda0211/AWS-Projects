@@ -1,0 +1,411 @@
+---
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Description: |-
+  Sample Lex V2 Banker Bot using CloudFormation Custom Resource
+
+Parameters:
+  SarAppArn:
+    Description: >-
+      ARN of SAR Lex CloudFormation Custom Resource application
+    Type: String
+    Default: arn:aws:serverlessrepo:us-east-1:777566285978:applications/lex-v2-cfn-cr
+  SarAppVersion:
+    Description: >-
+      Semantic version of SAR Lex CloudFormation Custom Resource application
+    Type: String
+    Default: 0.3.0
+
+Globals:
+  Function:
+    Runtime: python3.12
+
+Resources:
+  # this deploys the Custom Resource as a nested CloudFormation stack
+  LexV2CfnCr:
+    Type: AWS::Serverless::Application
+    Properties:
+      Location:
+        ApplicationId: !Ref SarAppArn
+        SemanticVersion: !Ref SarAppVersion
+      Parameters:
+        # Custom Resource Lambda log level
+        LogLevel: DEBUG
+
+  LexBot:
+    Type: Custom::LexBot
+    Properties:
+      ServiceToken: !GetAtt LexV2CfnCr.Outputs.LexV2CfnCrFunctionArn
+      botName: !Sub "${AWS::StackName}-BankerBot"
+      dataPrivacy:
+        childDirected: False
+      description: Example Banker bot to demonstrate Lex V2 capabilities
+      idleSessionTTLInSeconds: 300
+      roleArn: !GetAtt LexV2CfnCr.Outputs.LexServiceLinkedRole
+      CR.botLocales:
+        - localeId: en_US
+          nluIntentConfidenceThreshold: 0.40
+          voiceSettings:
+            voiceId: Ivy
+          CR.slotTypes:
+            - slotTypeName: accountType
+              valueSelectionSetting:
+                resolutionStrategy: TopResolution
+              slotTypeValues:
+                - sampleValue:
+                    value: Checking
+                - sampleValue:
+                    value: Savings
+                - sampleValue:
+                    value: Credit
+                  synonyms:
+                    - value: credit card
+                    - value: visa
+                    - value: mastercard
+                    - value: amex
+                    - value: american express
+          CR.intents:
+            - intentName: FallbackIntent
+              description: Default fallback intent when no other intent matches
+              intentClosingSetting:
+                closingResponse:
+                  messageGroups:
+                    - message:
+                        plainTextMessage:
+                          value: >-
+                            Sorry I am having trouble understanding.
+                            Can you describe what you'd like to do in a few
+                            words? I can help you find your account balance,
+                            transfer funds and make a payment.
+            - intentName: Welcome
+              description: Welcome intent
+              sampleUtterances:
+                - utterance: Hi
+                - utterance: Hello
+                - utterance: I need help
+                - utterance: Can you help me?
+              intentClosingSetting:
+                closingResponse:
+                  messageGroups:
+                    - message:
+                        plainTextMessage:
+                          value: >-
+                            Hi! I'm BB, the Banking Bot. How can I help you
+                            today?
+            - intentName: CheckBalance
+              description:
+                Intent to check the balance in the specified account type
+              sampleUtterances:
+                - utterance: What’s the balance in my account ?
+                - utterance: Check my account balance
+                - utterance: What’s the balance in my {accountType} account ?
+                - utterance: How much do I have in {accountType} ?
+                - utterance: I want to check the balance
+                - utterance: Can you help me with account balance ?
+                - utterance: Balance in {accountType}
+              fulfillmentCodeHook:
+                enabled: True
+              outputContexts:
+                - name: contextCheckBalance
+                  timeToLiveInSeconds: 90
+                  turnsToLive: 5
+              CR.slots:
+                - slotName: accountType
+                  CR.slotTypeName: accountType
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value:
+                                For which account would you like your balance?
+                      maxRetries: 2
+                - slotName: dateOfBirth
+                  CR.slotTypeName: AMAZON.Date
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value: >-
+                                For verification purposes, what is your date of
+                                birth?
+                      maxRetries: 2
+            - intentName: FollowupCheckBalance
+              description: >-
+                Intent to allow a follow-up balance check request without
+                authentication
+              sampleUtterances:
+                - utterance: How about my {accountType} account
+                - utterance: What about {accountType}
+                - utterance: And in {accountType} ?
+              fulfillmentCodeHook:
+                enabled: True
+              inputContexts:
+                - name: contextCheckBalance
+              CR.slots:
+                - slotName: accountType
+                  CR.slotTypeName: accountType
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value:
+                                For which account would you like your balance?
+                      maxRetries: 2
+                - slotName: dateOfBirth
+                  CR.slotTypeName: AMAZON.Date
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value: >-
+                                For verification purposes, what is your date of
+                                birth?
+                      maxRetries: 2
+                    defaultValueSpecification:
+                      defaultValueList:
+                        - defaultValue: '#contextCheckBalance.dateOfBirth'
+            - intentName: TransferFunds
+              description: Help user transfer funds between bank accounts
+              sampleUtterances:
+                - utterance: I want to transfer funds
+                - utterance: Can I make a transfer?
+                - utterance: I want to make a transfer
+                - utterance: >-
+                    I'd like to transfer {transferAmount} from
+                    {sourceAccountType} to {targetAccountType}
+                - utterance: >-
+                    Can I transfer {transferAmount} to my {targetAccountType}
+                - utterance: Would you be able to help me with a transfer?
+                - utterance: Need to make a transfer
+              fulfillmentCodeHook:
+                enabled: False
+              intentConfirmationSetting:
+                declinationResponse:
+                  messageGroups:
+                    - message:
+                        plainTextMessage:
+                          value: The transfer has been cancelled
+                promptSpecification:
+                  messageGroups:
+                    - message:
+                        plainTextMessage:
+                          value: >-
+                            Got it. So we are transferring {transferAmount} from
+                            {sourceAccountType} to {targetAccountType}.
+                            Can I go ahead with the transfer?
+                  maxRetries: 2
+              intentClosingSetting:
+                closingResponse:
+                  messageGroups:
+                    - message:
+                        plainTextMessage:
+                          value: >-
+                            The transfer is complete. {transferAmount} should
+                            now be available in your {targetAccountType}
+                            account.
+              CR.slots:
+                - slotName: sourceAccountType
+                  CR.slotTypeName: accountType
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value:
+                                Which account would you like to transfer from?
+                      maxRetries: 2
+                - slotName: targetAccountType
+                  CR.slotTypeName: accountType
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value: Which account are you transferring to?
+                      maxRetries: 2
+                - slotName: transferAmount
+                  CR.slotTypeName: AMAZON.Number
+                  valueElicitationSetting:
+                    slotConstraint: Required
+                    promptSpecification:
+                      messageGroups:
+                        - message:
+                            plainTextMessage:
+                              value: How much money would you like to transfer?
+                      maxRetries: 2
+
+  LexBotVersion:
+    # Bot versions are deleted by the Bot on Stack Deletions
+    DeletionPolicy: Retain
+    # Version number changes between updates which cause a CloudFormation
+    # delete event since the version number is the physical resource ID.
+    # The following policies prevents deletion events
+    UpdateReplacePolicy: Retain
+    Type: Custom::LexBotVersion
+    Properties:
+      ServiceToken: !GetAtt LexV2CfnCr.Outputs.LexV2CfnCrFunctionArn
+      botId: !Ref LexBot
+      # botVersionLocaleSpecification is derived from the bot locales
+      CR.botLocaleIds: !GetAtt LexBot.botLocaleIds
+      CR.lastUpdatedDateTime: !GetAtt LexBot.lastUpdatedDateTime
+
+  LexBotAlias:
+    # Alias is deleted by the Bot on Stack Deletions
+    DeletionPolicy: Retain
+    Type: Custom::LexBotAlias
+    Properties:
+      ServiceToken: !GetAtt LexV2CfnCr.Outputs.LexV2CfnCrFunctionArn
+      botId: !Ref LexBot
+      botAliasName: live
+      botVersion: !Ref LexBotVersion
+      botAliasLocaleSettings:
+        en_US:
+          enabled: True
+          # Lambda Code Hook
+          codeHookSpecification:
+            lambdaCodeHook:
+              lambdaARN: !GetAtt LexBotFunction.Arn
+              codeHookInterfaceVersion: "1.0"
+
+  LexBotFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description:
+        !Sub "Lex Fulfillment Function for bot: ${AWS::StackName}-BankerBot"
+      Handler: lambda_function.lambda_handler
+      MemorySize: 128
+      Timeout: 3
+      InlineCode: |-
+        import random
+        import decimal
+
+        def random_num():
+            return(decimal.Decimal(random.randrange(1000, 50000))/100)
+
+        def get_slots(intent_request):
+            return intent_request['sessionState']['intent']['slots']
+
+        def get_slot(intent_request, slotName):
+            slots = get_slots(intent_request)
+            if slots is not None and slotName in slots and slots[slotName] is not None:
+                return slots[slotName]['value']['interpretedValue']
+            else:
+                return None
+
+        def get_session_attributes(intent_request):
+            sessionState = intent_request['sessionState']
+            if 'sessionAttributes' in sessionState:
+                return sessionState['sessionAttributes']
+
+            return {}
+
+        def elicit_intent(intent_request, session_attributes, message):
+            return {
+                'sessionState': {
+                    'dialogAction': {
+                        'type': 'ElicitIntent'
+                    },
+                    'sessionAttributes': session_attributes
+                },
+                'messages': [ message ] if message != None else None,
+                'requestAttributes': intent_request['requestAttributes'] if 'requestAttributes' in intent_request else None
+            }
+
+        def close(intent_request, session_attributes, fulfillment_state, message):
+            intent_request['sessionState']['intent']['state'] = fulfillment_state
+            return {
+                'sessionState': {
+                    'sessionAttributes': session_attributes,
+                    'dialogAction': {
+                        'type': 'Close'
+                    },
+                    'intent': intent_request['sessionState']['intent']
+                },
+                'messages': [message],
+                'sessionId': intent_request['sessionId'],
+                'requestAttributes': intent_request['requestAttributes'] if 'requestAttributes' in intent_request else None
+            }
+
+        def CheckBalance(intent_request):
+            session_attributes = get_session_attributes(intent_request)
+            slots = get_slots(intent_request)
+            account = get_slot(intent_request, 'accountType')
+            #The account balance in this case is a random number
+            #Here is where you could query a system to get this information
+            balance = str(random_num())
+            text = "Thank you. The balance on your "+account+" account is $"+balance+" dollars."
+            message =  {
+                    'contentType': 'PlainText',
+                    'content': text
+                }
+            fulfillment_state = "Fulfilled"
+            return close(intent_request, session_attributes, fulfillment_state, message)
+
+        def FollowupCheckBalance(intent_request):
+            session_attributes = get_session_attributes(intent_request)
+            slots = get_slots(intent_request)
+            account = get_slot(intent_request, 'accountType')
+            #The account balance in this case is a random number
+            #Here is where you could query a system to get this information
+            balance = str(random_num())
+            text = "Thank you. The balance on your "+account+" account is $"+balance+" dollars."
+            message =  {
+                    'contentType': 'PlainText',
+                    'content': text
+                }
+            fulfillment_state = "Fulfilled"
+            return close(intent_request, session_attributes, fulfillment_state, message)
+
+        def dispatch(intent_request):
+            intent_name = intent_request['sessionState']['intent']['name']
+            response = None
+            # Dispatch to your bot's intent handlers
+            if intent_name == 'CheckBalance':
+                return CheckBalance(intent_request)
+            elif intent_name == 'FollowupCheckBalance':
+                return FollowupCheckBalance(intent_request)
+
+            raise Exception('Intent with name ' + intent_name + ' not supported')
+
+        def lambda_handler(event, context):
+            response = dispatch(event)
+            return response
+
+  # Add resource policy to allow the Lex Bot Alias to invoke it
+  LexBotFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt LexBotFunction.Arn
+      Principal: lexv2.amazonaws.com
+      SourceArn:
+        !Sub "arn:${AWS::Partition}:lex:${AWS::Region}:${AWS::AccountId}:\
+              bot-alias/*"
+
+Outputs:
+  LexBotId:
+    Description: Lex Bot ID
+    Value: !Ref LexBot
+
+  LexBotLocaleIds:
+    Description: Lex Bot Locale IDs
+    Value: !Join [",", !GetAtt LexBot.botLocaleIds]
+
+  LexBotLatestVersion:
+    Description: Latest Lex Bot Version ID
+    Value: !Ref LexBotVersion
+
+  LexBotAliasId:
+    Description: Lex Bot Alias ID
+    Value: !Ref LexBotAlias
