@@ -5,7 +5,7 @@ The projects are categorized into four levels, each reflecting a different degre
 * <a href ="https://github.com/brunda0211/AWS-Projects/tree/main/AWS_Projects_Basic/Project1%20">Level 1 (Basic)</a>
 * <a href ="">Level 2 (Intermediate)</a>
 * <a href ="">Level 3 (Advanced)</a>
-## Level 100 (Introductory Projects)
+## Level 1 (Introductory Projects)
 
 This section features projects ideal for beginners, focusing on fundamental AWS concepts and basic services.
 
@@ -24,7 +24,7 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
 - **Service Used:** Amazon S3, Amazon QuickSight
 
 - **Link:** [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project2/Netflix_data_visualization.md) 
-## Level 200 (Intermediate Projects)
+## Level 2 (Intermediate Projects)
 
 This section features projects that involve combining multiple AWS services, handling user data, and implementing logic flows. These projects are ideal for learners who understand the basics and want to build more interactive and real-world cloud applications.
 
