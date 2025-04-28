@@ -15,7 +15,7 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
 
   - **Service Used**: AWS IAM, EC2
   
-  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project1%20/IAM_EC2_Policy_Steps.md)
+  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Engineer%20Onboarding%3A%20EC2%20%2B%20IAM%20Setup/IAM_EC2_Policy_Steps.md)
 
 ### **Project 2: Netflix Data Visualization with Amazon QuickSight + S3**
 
@@ -23,7 +23,7 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
 
 - **Service Used:** Amazon S3, Amazon QuickSight
 
-- **Link:** [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project2/Netflix_data_visualization.md) 
+- **Link:** [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/%20Netflix%20Data%20Visualization%3A%20Amazon%20QuickSight%20%2B%20S3%20Setup/Netflix_data_visualization.md)
 
 ###  Project 3: Build a Virtual Private Cloud (VPC) on AWS
 
@@ -45,7 +45,7 @@ This section features projects that involve combining multiple AWS services, han
 
   - **Service Used**: Amazon Lex, AWS Lambda, CloudFormation. 
 
-  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Project%201/Chatbot_using_lex.md)
+  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Bankerbot%20-%20Chatbot%20with%20Amazon%20Lex/Chatbot_using_lex.md)
 
 
 ### Project 2 : Multi-Cloud Data Transfer with AWS and GCP
