@@ -56,3 +56,10 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/GCP%20and%20AWS%20Multi-Cloud%20Data%20Transfer/Multi-Cloud-Data-Transfer-Project.md)
 
+### Project 3 : Deploy an App with Docker and AWS Elastic Beanstalk
+
+- **Description**: This project walks through installing Docker, creating a custom container image, running it locally, and deploying the containerized application to AWS Elastic Beanstalk. You'll make your web application live on the internet, while learning containerization and cloud deployment fundamentals.
+
+- **Service Used**: Docker, AWS Elastic Beanstalk
+
+- **Link**: [Project Directory](AWS_Projects_Basic/Project3_Docker_ElasticBeanstalk/)
