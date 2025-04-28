@@ -45,3 +45,11 @@ This section features projects that involve combining multiple AWS services, han
 - **Service Used**: AWS S3, AWS IAM, Google Cloud Storage, GCP Storage Transfer Service 
 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/GCP%20and%20AWS%20Multi-Cloud%20Data%20Transfer/Multi-Cloud-Data-Transfer-Project.md)
+
+###  Project 3: Build a Virtual Private Cloud (VPC) on AWS
+
+- **Description**: In this project, we’ll build a Virtual Private Cloud (VPC) inside AWS, create a public subnet, and connect it to the internet using an Internet Gateway. This sets up the foundation for secure and scalable AWS networking.
+  
+- **Service Used**: Amazon VPC
+
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Build%20a%20VPC/vpc.md)
