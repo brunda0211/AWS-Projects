@@ -5,7 +5,7 @@ The projects are categorized into four levels, each reflecting a different degre
 * <a href ="https://github.com/brunda0211/AWS-Projects/tree/main/AWS_Projects_Basic/Project1%20">Level 1 (Basic)</a>
 * <a href ="">Level 2 (Intermediate)</a>
 * <a href ="">Level 3 (Advanced)</a>
-## Level 1 (Introductory Projects)
+## Level 1 (Basic Projects)
 
 This section features projects ideal for beginners, focusing on fundamental AWS concepts and basic services.
 
