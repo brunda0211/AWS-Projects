@@ -24,6 +24,16 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
 - **Service Used:** Amazon S3, Amazon QuickSight
 
 - **Link:** [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Project2/Netflix_data_visualization.md) 
+
+###  Project 3: Build a Virtual Private Cloud (VPC) on AWS
+
+- **Description**: In this project, we’ll build a Virtual Private Cloud (VPC) inside AWS, create a public subnet, and connect it to the internet using an Internet Gateway. This sets up the foundation for secure and scalable AWS networking.
+  
+- **Service Used**: Amazon VPC
+
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Build%20a%20VPC/vpc.md)
+
+
 ## Level 2 (Intermediate Projects)
 
 This section features projects that involve combining multiple AWS services, handling user data, and implementing logic flows. These projects are ideal for learners who understand the basics and want to build more interactive and real-world cloud applications.
@@ -46,10 +56,3 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/GCP%20and%20AWS%20Multi-Cloud%20Data%20Transfer/Multi-Cloud-Data-Transfer-Project.md)
 
-###  Project 3: Build a Virtual Private Cloud (VPC) on AWS
-
-- **Description**: In this project, we’ll build a Virtual Private Cloud (VPC) inside AWS, create a public subnet, and connect it to the internet using an Internet Gateway. This sets up the foundation for secure and scalable AWS networking.
-  
-- **Service Used**: Amazon VPC
-
-- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Build%20a%20VPC/vpc.md)
