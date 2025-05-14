@@ -63,3 +63,12 @@ This section features projects that involve combining multiple AWS services, han
 - **Service Used**: Docker, AWS Elastic Beanstalk
 
 - **Link**: [Project Directory](AWS_Projects_Basic/Project3_Docker_ElasticBeanstalk/)
+
+
+### Project 4 : Set Up a Web App in the Cloud
+
+- **Description**: This project walks you through the steps to launch a Java-based web application on an Amazon EC2 instance and connect to it securely using SSH and Visual Studio Code. You'll install Maven and Amazon Corretto 8, generate a web app, and edit project files directly on the remote server using the Remote - SSH extension in VS Code. This project serves as the foundation for building a complete CI/CD pipeline in the following challenges.
+
+- **Service Used**: Amazon EC2, AWS IAM, Apache Maven, Amazon Corretto, Visual Studio Code (Remote - SSH)
+
+- **Link**: [Project Directory](AWS_Projects_Basic/Engineer%20Onboarding:%20EC2%20%2B%20IAM%20Setup/)
