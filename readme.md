@@ -62,7 +62,7 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Service Used**: Docker, AWS Elastic Beanstalk
 
-- **Link**: [Project Directory](AWS_Projects_Basic/Project3_Docker_ElasticBeanstalk/)
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Deploy%20an%20app%20with%20docker/Dockerapp.md)
 
 
 ### Project 4 : Set Up a Web App in the Cloud
@@ -71,4 +71,4 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Service Used**: Amazon EC2, AWS IAM, Apache Maven, Amazon Corretto, Visual Studio Code (Remote - SSH)
 
-- **Link**: [Project Directory](AWS_Projects_Basic/Engineer%20Onboarding:%20EC2%20%2B%20IAM%20Setup/)
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Set%20Up%20a%20Web%20App%20in%20the%20Cloud/Set%20Up%20a%20Web%20App%20in%20the%20Cloud.md)
