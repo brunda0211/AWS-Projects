@@ -73,3 +73,14 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Set%20Up%20a%20Web%20App%20in%20the%20Cloud/Set%20Up%20a%20Web%20App%20in%20the%20Cloud.md) 
 
+## Project 5: Automated S3 Setup with Terraform
+
+### 📌 Description
+This project demonstrates how to provision an Amazon S3 bucket and upload a local image file using Infrastructure as Code (IaC) with Terraform. It covers setting up Terraform on macOS, configuring AWS credentials via AWS CLI, and writing Terraform configuration files to create an S3 bucket with public access blocked. You'll also upload a file to the bucket and destroy the infrastructure afterward. This beginner-friendly project highlights core IaC practices and cloud resource automation.
+
+- **Service Used**: AWS S3, AWS IAM, AWS CLI,Terraform (Infrastructure as Code)
+
+### 🔗 Link
+[Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Create%20S3%20buckets%20using%20Terraform/Create%20S3%20bucket%20using%20terraform.md#-create-an-s3-bucket-and-upload-files-using-terraform)
+
+
