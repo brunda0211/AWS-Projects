@@ -71,4 +71,5 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Service Used**: Amazon EC2, AWS IAM, Apache Maven, Amazon Corretto, Visual Studio Code (Remote - SSH)
 
-- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Set%20Up%20a%20Web%20App%20in%20the%20Cloud/Set%20Up%20a%20Web%20App%20in%20the%20Cloud.md)
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Set%20Up%20a%20Web%20App%20in%20the%20Cloud/Set%20Up%20a%20Web%20App%20in%20the%20Cloud.md) 
+
