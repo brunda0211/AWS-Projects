@@ -82,3 +82,16 @@ This section features projects that involve combining multiple AWS services, han
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Intermediate/Create%20S3%20buckets%20using%20Terraform/Create%20S3%20bucket%20using%20terraform.md#-create-an-s3-bucket-and-upload-files-using-terraform)
 
 
+## Level 3 (Advanced Projects)
+
+These projects are the most challenging, demonstrating advanced AWS solutions and best practices. 
+
+
+### **Project 1 : BankerBot - A Conversational AI Chatbot using Amazon Lex**
+
+  - **Description**: This project implements a Continuous Delivery (CD) pipeline using AWS CodePipeline, AWS CodeBuild, and AWS Elastic Beanstalk to automate deployments. The setup provides a structured approach to code deployment, enhancing reliability and minimizing manual processes—ideal for agile development teams aiming for efficient, high-frequency deployments.
+
+
+  - **Service Used**: AWS CodePipeline, AWS CodeBuild, AWS Elastic Beanstalk, Amazon EC2 with Auto Scaling
+
+  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Advanced/Create%20a%20Continuous%20Delivery%20Pipeline/Create%20a%20Continuous%20Delivery%20Pipeline.md) 
