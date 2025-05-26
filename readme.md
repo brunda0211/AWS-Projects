@@ -87,7 +87,7 @@ This section features projects that involve combining multiple AWS services, han
 These projects are the most challenging, demonstrating advanced AWS solutions and best practices. 
 
 
-### **Project 1 : BankerBot - A Conversational AI Chatbot using Amazon Lex**
+### Project 1 : Create a Continuous Delivery Pipeline 
 
   - **Description**: This project implements a Continuous Delivery (CD) pipeline using AWS CodePipeline, AWS CodeBuild, and AWS Elastic Beanstalk to automate deployments. The setup provides a structured approach to code deployment, enhancing reliability and minimizing manual processes—ideal for agile development teams aiming for efficient, high-frequency deployments.
 
