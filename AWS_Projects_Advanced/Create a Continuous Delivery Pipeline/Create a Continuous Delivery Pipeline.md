@@ -1,4 +1,4 @@
-## Create a Continuous Delivery Pipeline : AWS Project
+## Create a Continuous Delivery Pipeline 
 
 ### Introduction
 
