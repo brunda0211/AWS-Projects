@@ -95,3 +95,13 @@ These projects are the most challenging, demonstrating advanced AWS solutions an
   - **Service Used**: AWS CodePipeline, AWS CodeBuild, AWS Elastic Beanstalk, Amazon EC2 with Auto Scaling
 
   - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Advanced/Create%20a%20Continuous%20Delivery%20Pipeline/Create%20a%20Continuous%20Delivery%20Pipeline.md) 
+
+
+  ### Project 2 : Build a Serverless Web Application using Generative AI
+
+  - **Description**: This project walks through creating a serverless recipe generator application using AWS Amplify and Amazon Bedrock. Users can input ingredients and receive AI-generated recipes via a simple web interface. By combining Generative AI with a serverless architecture, this application offers a scalable and interactive experience.
+
+
+  - **Service Used**: AWS Amplify, Amazon Bedrock, AWS AppSync, AWS Cognito, AWS Lambda, Node.js
+
+  - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Advanced/Build%20a%20Serverless%20Web%20Application%20using%20Generative%20AI/Build%20a%20serverless%20web%20app.md) 
