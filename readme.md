@@ -34,6 +34,15 @@ This section features projects ideal for beginners, focusing on fundamental AWS 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects/blob/main/AWS_Projects_Basic/Build%20a%20VPC/vpc.md)
 
 
+### **Project 4: Host a Static Website on Amazon S3**
+
+- **Description**: In this project, we’ll host a static website using Amazon S3. You’ll create an S3 bucket, upload HTML and image files, configure static website hosting, and make the files publicly accessible. This project is part of the AWS Beginner Challenge and introduces key concepts like ACLs, bucket policies, and static hosting.
+
+- **Service Used**: Amazon S3
+
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Basic/Host%20a%20website%20on%20Amazon%20S3/Host%20a%20website%20on%20Amazon%20S3.md)
+
+
 ## Level 2 (Intermediate Projects)
 
 This section features projects that involve combining multiple AWS services, handling user data, and implementing logic flows. These projects are ideal for learners who understand the basics and want to build more interactive and real-world cloud applications.
