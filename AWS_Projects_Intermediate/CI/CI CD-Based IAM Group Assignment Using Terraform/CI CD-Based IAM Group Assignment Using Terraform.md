@@ -1,4 +1,4 @@
-# 📁 Project: Terraform IAM - Ticket Workflow Simulation
+# 📁 CI/CD-Based IAM Group Assignment Using Terraform
 
 ## 🎯 Objective:
 Simulate a real-world corporate setup where:
