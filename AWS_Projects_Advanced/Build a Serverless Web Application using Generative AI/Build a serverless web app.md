@@ -737,9 +737,3 @@ Once you’ve confirmed that the app is working as expected locally, it’s time
 ## **Conclusion**
 
 This project combines AWS Amplify, Amazon Bedrock, and AWS Cognito to build a scalable, AI-powered recipe generator. It highlights the potential of serverless applications with Generative AI, making it ideal for real-time, interactive user experiences.
-
-Explore my [GitHub repository.](https://github.com/shubhammurti/AWS-Projects-Portfolio/)
-
-> **Shubham Murti — Aspiring Cloud Security Engineer | Weekly Cloud Learning !!**
-
-**Let’s connect:** [Linkdin](http://www.linkedin.com/in/shubham-murti-b6486a1aa), [Twitter](https://x.com/murti_shubham), [Github](https://github.com/shubhammurti)

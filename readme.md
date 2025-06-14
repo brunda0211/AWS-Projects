@@ -94,11 +94,11 @@ This section features projects that involve combining multiple AWS services, han
 
 ### Project 6: CI/CD-Based IAM Group Assignment Using Terraform
 
-- **Description**: This project simulates a real-world corporate workflow where IAM user and group management is handled using Terraform. Changes are made through Git branches and Pull Requests, with a CI/CD pipeline executing `terraform apply` upon merge. A ticket-based task is resolved by modifying shared Terraform files to add a new IAM user to a group. This project emphasizes Infrastructure as Code (IaC), collaboration using Git, and automation using CI/CD practices like GitHub Actions or Jenkins.
+- **Description**: This project simulates a real-world corporate workflow where IAM user and group management is handled using Terraform. Changes are made through Git branches and Pull Requests, with a CI/CD pipeline. A ticket-based task is resolved by modifying shared Terraform files to add a new IAM user to a group. This project emphasizes Infrastructure as Code (IaC), collaboration using Git, and automation using CI/CD practices like GitHub Actions. 
 
 - **Services Used**: AWS IAM, Terraform, GitHub, GitHub Actions
 
-- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Intermediate/CI/CI%20CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform/CI%20CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform.md)
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Intermediate/CI/CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform/CI%20CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform.md)
 
 
 
