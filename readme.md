@@ -100,7 +100,13 @@ This section features projects that involve combining multiple AWS services, han
 
 - **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Intermediate/CI/CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform/CI%20CD-Based%20IAM%20Group%20Assignment%20Using%20Terraform.md)
 
+### Project 7: RAG Chatbot with AWS Bedrock
 
+- **Description**: This project demonstrates how to build a document-powered chatbot using AWS Bedrock's Retrieval-Augmented Generation (RAG) system. You'll create a Knowledge Base with OpenSearch vector storage, connect document sources from S3, and configure Meta's Llama 3 models for natural conversations. Learn to process documents with Titan embeddings, handle sync operations, and test domain-specific responses while filtering out-of-context queries. Perfect for understanding enterprise-grade AI implementations.
+
+- **Services Used**: Amazon Bedrock, Amazon S3, OpenSearch Serverless, AWS IAM, Meta Llama 3 (8B & 70B Instruct), Titan Text Embeddings
+
+- **Link**: [Project Directory](https://github.com/brunda0211/AWS-Projects-Portfolio/blob/main/AWS_Projects_Intermediate/Build%20a%20RAG-Powered%20Chatbot%20with%20AWS%20Bedrock/Build%20a%20RAG-Powered%20Chatbot%20with%20AWS%20Bedrock.md)
 
 ## Level 3 (Advanced Projects)
 
